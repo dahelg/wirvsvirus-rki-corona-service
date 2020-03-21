@@ -1,0 +1,54 @@
+{
+  "name": "wirvsvirus-rki-corona-service",
+  "version": "0.0.1",
+  "description": "wirvsvirus-rki-corona-service",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "eslint": "./node_modules/.bin/eslint index.js src",
+    "precommit": "npm run eslint && npm run test:unit",
+    "start": "nodemon --exec babel-node index.js",
+    "debug": "nodemon --inspect --exec babel-node index.js",
+    "test:unit": "jest ./test/unit",
+    "test:unit:watch": "jest ./test/unit --watch",
+    "test:integration": "jest ./test/integration",
+    "test:integration:watch": "jest ./test/integration --watch",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:local:RkiService": "npx babel-node src/test/local/RkiService.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dahelg/wirvsvirus-rki-corona-service.git"
+  },
+  "author": "Helge Drews",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dahelg/wirvsvirus-rki-corona-service/issues"
+  },
+  "homepage": "https://github.com/dahelg/wirvsvirus-rki-corona-service#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "moment": "^2.24.0",
+    "morgan": "^1.9.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "husky": "^1.3.1",
+    "jest": "^24.1.0",
+    "jest-cli": "^24.1.0",
+    "nodemon": "^1.18.10"
+  }
+}
